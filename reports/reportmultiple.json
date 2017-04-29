@@ -1,0 +1,940 @@
+[
+  {
+    "uri": "\/vagrant\/auxmoney-web\/crm\/src\/Auxmoney\/Bundle\/CRMBundle\/Tests\/Features\/bugs\/auxit_6638.feature",
+    "id": "auxit-6638",
+    "tags": [],
+    "keyword": "Funktionalit\u00e4t",
+    "name": "AUXIT-6638",
+    "line": 0,
+    "description": "As a borrower\nI do not want to receive contracts for cancelled credits\nin order to not be confused",
+    "elements": [
+      {
+        "id": "no-contract-mail-should-be-sent-for-cancelled-credits;auxit-6638",
+        "tags": [
+          {
+            "name": "@javascript"
+          },
+          {
+            "name": "@database"
+          },
+          {
+            "name": "@fixtures(OneCancelledWithContractCredit)"
+          }
+        ],
+        "keyword": "Szenario",
+        "name": "No contract mail should be sent for cancelled credits",
+        "line": 11,
+        "description": "",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Gegeben sei",
+            "name": "I logged in as crm support user",
+            "line": 8,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 10356000000
+            }
+          },
+          {
+            "keyword": "Wenn",
+            "name": "I am on credit page with id \"1\"",
+            "line": 12,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 13775000000
+            }
+          },
+          {
+            "keyword": "Und",
+            "name": "I execute command \"auxmoney:credit:contractmail\" in \"admin\" with \"--force\"",
+            "line": 13,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 15008000000
+            }
+          },
+          {
+            "keyword": "Dann",
+            "name": "I should see \"Processing 0 results\" in command output",
+            "line": 14,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 15013000000
+            }
+          },
+          {
+            "keyword": "Wenn",
+            "name": "ich aktualisiere die Seite",
+            "line": 15,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 17742000000
+            }
+          },
+          {
+            "keyword": "Dann",
+            "name": "sollte ich nicht \"Kreditvertrag per Mail versendet\" sehen",
+            "line": 16,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 18102000000
+            }
+          }
+        ],
+        "examples": []
+      }
+    ]
+  },
+  {
+    "uri": "\/vagrant\/auxmoney-web\/crm\/src\/Auxmoney\/Bundle\/CRMBundle\/Tests\/Features\/bugs\/auxit_6671.feature",
+    "id": "auxit-6671",
+    "tags": [],
+    "keyword": "Feature",
+    "name": "AUXIT-6671",
+    "line": 0,
+    "description": "As a CRM user\nI want to see the correct potential amount for a credit\nin order to upsell the most promising credits first",
+    "elements": [
+      {
+        "id": "the-potential-of-the-credit-should-be-correctly-displayed;auxit-6671",
+        "tags": [
+          {
+            "name": "@javascript"
+          },
+          {
+            "name": "@database"
+          },
+          {
+            "name": "@fixtures(OneFundedCreditShadowLimit)"
+          }
+        ],
+        "keyword": "Scenario Outline",
+        "name": "The potential of the credit should be correctly displayed",
+        "line": 11,
+        "description": "",
+        "type": "outline",
+        "steps": [
+          {
+            "keyword": "Given",
+            "name": "I logged in as crm support user",
+            "line": 7,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 28284000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"status\" for entity \"Auxmoney\\Bundle\\CRMBundle\\Entity\\Credit\" with id \"1\" to value \"4\"",
+            "line": 8,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 28428000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I edit property \"loan\" for entity \"Auxmoney\\Bundle\\CRMBundle\\Entity\\Credit\" with id \"1\" to value \"5000\"",
+            "line": 12,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 28432000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"creditInsuranceAmountCent\" for entity \"Auxmoney\\Component\\CreditTerms\\Entity\\CreditTerms\" with id \"1\" to value \"0\"",
+            "line": 13,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 28442000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"value\" for entity \"Auxmoney\\Bundle\\CoreBundle\\Entity\\Certificate\" with id \"1\" to value \"1250000\"",
+            "line": 14,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 28446000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I aggregate the credit with id \"@creditfunded1.id\"",
+            "line": 15,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 28525000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I am on the creditlist page",
+            "line": 16,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 32089000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I display in the base_credit_workflow_grid grid the column Potential",
+            "line": 17,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 32396000000
+            }
+          },
+          {
+            "keyword": "Then",
+            "name": "I should see \"7.000,00 \u20ac\"",
+            "line": 18,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 32727000000
+            }
+          },
+          {
+            "keyword": "Given",
+            "name": "I logged in as crm support user",
+            "line": 7,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 41771000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"status\" for entity \"Auxmoney\\Bundle\\CRMBundle\\Entity\\Credit\" with id \"1\" to value \"4\"",
+            "line": 8,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 41928000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I edit property \"loan\" for entity \"Auxmoney\\Bundle\\CRMBundle\\Entity\\Credit\" with id \"1\" to value \"5000\"",
+            "line": 12,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 41932000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"creditInsuranceAmountCent\" for entity \"Auxmoney\\Component\\CreditTerms\\Entity\\CreditTerms\" with id \"1\" to value \"50000\"",
+            "line": 13,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 41937000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"value\" for entity \"Auxmoney\\Bundle\\CoreBundle\\Entity\\Certificate\" with id \"1\" to value \"1250000\"",
+            "line": 14,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 41940000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I aggregate the credit with id \"@creditfunded1.id\"",
+            "line": 15,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 41959000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I am on the creditlist page",
+            "line": 16,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 45145000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I display in the base_credit_workflow_grid grid the column Potential",
+            "line": 17,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 45393000000
+            }
+          },
+          {
+            "keyword": "Then",
+            "name": "I should see \"7.500,00 \u20ac\"",
+            "line": 18,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 45718000000
+            }
+          },
+          {
+            "keyword": "Given",
+            "name": "I logged in as crm support user",
+            "line": 7,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 54987000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"status\" for entity \"Auxmoney\\Bundle\\CRMBundle\\Entity\\Credit\" with id \"1\" to value \"4\"",
+            "line": 8,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 55166000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I edit property \"loan\" for entity \"Auxmoney\\Bundle\\CRMBundle\\Entity\\Credit\" with id \"1\" to value \"1250\"",
+            "line": 12,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 55173000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"creditInsuranceAmountCent\" for entity \"Auxmoney\\Component\\CreditTerms\\Entity\\CreditTerms\" with id \"1\" to value \"50000\"",
+            "line": 13,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 55179000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"value\" for entity \"Auxmoney\\Bundle\\CoreBundle\\Entity\\Certificate\" with id \"1\" to value \"700000\"",
+            "line": 14,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 55186000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I aggregate the credit with id \"@creditfunded1.id\"",
+            "line": 15,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 55202000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I am on the creditlist page",
+            "line": 16,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 58427000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I display in the base_credit_workflow_grid grid the column Potential",
+            "line": 17,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 58627000000
+            }
+          },
+          {
+            "keyword": "Then",
+            "name": "I should see \"5.750,00 \u20ac\"",
+            "line": 18,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 58955000000
+            }
+          },
+          {
+            "keyword": "Given",
+            "name": "I logged in as crm support user",
+            "line": 7,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 8255000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"status\" for entity \"Auxmoney\\Bundle\\CRMBundle\\Entity\\Credit\" with id \"1\" to value \"4\"",
+            "line": 8,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 8460000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I edit property \"loan\" for entity \"Auxmoney\\Bundle\\CRMBundle\\Entity\\Credit\" with id \"1\" to value \"4321\"",
+            "line": 12,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 8468000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"creditInsuranceAmountCent\" for entity \"Auxmoney\\Component\\CreditTerms\\Entity\\CreditTerms\" with id \"1\" to value \"12345\"",
+            "line": 13,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 8473000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"value\" for entity \"Auxmoney\\Bundle\\CoreBundle\\Entity\\Certificate\" with id \"1\" to value \"8789615\"",
+            "line": 14,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 8479000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I aggregate the credit with id \"@creditfunded1.id\"",
+            "line": 15,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 8499000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I am on the creditlist page",
+            "line": 16,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 11631000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I display in the base_credit_workflow_grid grid the column Potential",
+            "line": 17,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 11853000000
+            }
+          },
+          {
+            "keyword": "Then",
+            "name": "I should see \"83.198,60 \u20ac\"",
+            "line": 18,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 12164000000
+            }
+          }
+        ],
+        "examples": []
+      }
+    ]
+  },
+  {
+    "uri": "\/vagrant\/auxmoney-web\/crm\/src\/Auxmoney\/Bundle\/CRMBundle\/Tests\/Features\/bugs\/auxit_6735.feature",
+    "id": "auxit-6735",
+    "tags": [],
+    "keyword": "Feature",
+    "name": "AUXIT-6735",
+    "line": 0,
+    "description": "As a CRM user\nI want to see the no empty durations\nin order to get no error in the credit calculator",
+    "elements": [
+      {
+        "id": "hide-the-duration-choices,-when-no-valid-combination-exist;auxit-6735",
+        "tags": [
+          {
+            "name": "@javascript"
+          },
+          {
+            "name": "@database"
+          },
+          {
+            "name": "@fixtures(Credit\/OneCreditFundedPromised)"
+          }
+        ],
+        "keyword": "Scenario Outline",
+        "name": "Hide the duration choices, when no valid combination exist",
+        "line": 10,
+        "description": "",
+        "type": "outline",
+        "steps": [
+          {
+            "keyword": "Given",
+            "name": "I logged in as crm support user",
+            "line": 7,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 21709000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"rate\" for entity \"Auxmoney\\Bundle\\CRMBundle\\Entity\\Credit\" with id \"@creditfundedpromised1.id\" to value \"15.4\"",
+            "line": 11,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 21953000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I am on credit page with id \"@creditfundedpromised1.id\"",
+            "line": 12,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 24890000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I should see \"Kredit bearbeiten\"",
+            "line": 13,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 25169000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I follow \"Kredit bearbeiten\"",
+            "line": 14,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 25282000000
+            }
+          },
+          {
+            "keyword": "Then",
+            "name": "I wait for 60 seconds for ajax to complete",
+            "line": 15,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 28661000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I should see an element with selector \"select[data-ftid=auxmoney_crm_credit_duration]\"",
+            "line": 16,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 28683000000
+            }
+          },
+          {
+            "keyword": "Given",
+            "name": "I logged in as crm support user",
+            "line": 7,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 37668000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I edit property \"rate\" for entity \"Auxmoney\\Bundle\\CRMBundle\\Entity\\Credit\" with id \"@creditfundedpromised1.id\" to value \"18.4\"",
+            "line": 11,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 37947000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I am on credit page with id \"@creditfundedpromised1.id\"",
+            "line": 12,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 40462000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I should see \"Kredit bearbeiten\"",
+            "line": 13,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 40729000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I follow \"Kredit bearbeiten\"",
+            "line": 14,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 40848000000
+            }
+          },
+          {
+            "keyword": "Then",
+            "name": "I wait for 60 seconds for ajax to complete",
+            "line": 15,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 41855000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I should not see an element with selector \"select[data-ftid=auxmoney_crm_credit_duration]\"",
+            "line": 16,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 41886000000
+            }
+          }
+        ],
+        "examples": []
+      }
+    ]
+  },
+  {
+    "uri": "\/vagrant\/auxmoney-web\/crm\/src\/Auxmoney\/Bundle\/CRMBundle\/Tests\/Features\/bugs\/auxts_1422.feature",
+    "id": "credit-list-is-translated",
+    "tags": [],
+    "keyword": "Feature",
+    "name": "Credit List Is Translated",
+    "line": 0,
+    "description": "As a CRM user\nI want to see the translated workflow step\nin order to understand the displayed step",
+    "elements": [
+      {
+        "id": "the-workflow-steps-are-translated;credit-list-is-translated",
+        "tags": [
+          {
+            "name": "@javascript"
+          },
+          {
+            "name": "@database"
+          },
+          {
+            "name": "@fixtures(Workflow\/FundedCredit)"
+          }
+        ],
+        "keyword": "Scenario",
+        "name": "The workflow steps are translated",
+        "line": 10,
+        "description": "",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given",
+            "name": "I logged in as crm support user",
+            "line": 7,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 51526000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I execute command \"auxmoney:credit-workflow:aggregate\" in \"crm\" with \"--force\"",
+            "line": 11,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 54761000000
+            }
+          },
+          {
+            "keyword": "And",
+            "name": "I am on the creditlist page",
+            "line": 12,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 57950000000
+            }
+          },
+          {
+            "keyword": "Then",
+            "name": "I should see \"Kreditprojekte\"",
+            "line": 13,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 58221000000
+            }
+          },
+          {
+            "keyword": "When",
+            "name": "I display in the base_credit_workflow_grid grid the column Schritt",
+            "line": 14,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 58495000000
+            }
+          },
+          {
+            "keyword": "Then",
+            "name": "I should see \"In Bearbeitung\"",
+            "line": 15,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 58992000000
+            }
+          }
+        ],
+        "examples": []
+      }
+    ]
+  }
+]

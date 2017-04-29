@@ -1,0 +1,113 @@
+[
+  {
+    "uri": "\/vagrant\/auxmoney-web\/crm\/src\/Auxmoney\/Bundle\/CRMBundle\/Tests\/Features\/bugs\/auxit_6638.feature",
+    "id": "auxit-6638",
+    "tags": [],
+    "keyword": "Funktionalit\u00e4t",
+    "name": "AUXIT-6638",
+    "line": 0,
+    "description": "As a borrower\nI do not want to receive contracts for cancelled credits\nin order to not be confused",
+    "elements": [
+      {
+        "id": "no-contract-mail-should-be-sent-for-cancelled-credits;auxit-6638",
+        "tags": [
+          {
+            "name": "@javascript"
+          },
+          {
+            "name": "@database"
+          },
+          {
+            "name": "@fixtures(OneCancelledWithContractCredit)"
+          }
+        ],
+        "keyword": "Szenario",
+        "name": "No contract mail should be sent for cancelled credits",
+        "line": 11,
+        "description": "",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Gegeben sei",
+            "name": "I logged in as crm support user",
+            "line": 8,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 10229000000
+            }
+          },
+          {
+            "keyword": "Wenn",
+            "name": "I am on credit page with id \"1\"",
+            "line": 12,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 13380000000
+            }
+          },
+          {
+            "keyword": "Und",
+            "name": "I execute command \"auxmoney:credit:contractmail\" in \"admin\" with \"--force\"",
+            "line": 13,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 14084000000
+            }
+          },
+          {
+            "keyword": "Dann",
+            "name": "I should see \"Processing 0 results\" in command output",
+            "line": 14,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 14090000000
+            }
+          },
+          {
+            "keyword": "Wenn",
+            "name": "ich aktualisiere die Seite",
+            "line": 15,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 16362000000
+            }
+          },
+          {
+            "keyword": "Dann",
+            "name": "sollte ich nicht \"Kreditvertrag per Mail versendet\" sehen",
+            "line": 16,
+            "match": {
+              "location": ""
+            },
+            "result": {
+              "status": "passed",
+              "error_message": null,
+              "duration": 16727000000
+            }
+          }
+        ],
+        "examples": []
+      }
+    ]
+  }
+]

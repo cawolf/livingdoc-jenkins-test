@@ -1,226 +1,226 @@
 [
   {
-    "uri": "\/tmp\/behat\/0086716af2deaace0a46e9a5c64cdefb\/features\/feature.feature",
-    "id": "eat-cukes-in-lot",
-    "keyword": "Feature",
-    "name": "Eat cukes in lot",
-    "line": 1,
     "description": "",
     "elements": [
       {
+        "description": "",
         "id": "eat-cukes-in-lot;eating-many-cukes",
         "keyword": "Scenario Outline",
-        "name": "Eating many cukes",
         "line": 3,
-        "description": "",
-        "type": "outline",
+        "name": "Eating many cukes",
         "steps": [
           {
             "keyword": "Given",
-            "name": "I have 10 cukes",
             "line": 5,
             "match": {
-              "location": "ExampleFeatureContext::passing1()",
               "arguments": [
                 {
                   "val": "10"
                 }
-              ]
+              ],
+              "location": "ExampleFeatureContext::passing1()"
             },
+            "name": "I have 10 cukes",
             "result": {
-              "status": "passed",
-              "duration": 12000000
+              "duration": 12000000,
+              "status": "passed"
             }
           },
           {
             "keyword": "When",
-            "name": "I eat 5 cukes",
             "line": 6,
             "match": {
-              "location": "ExampleFeatureContext::passing1()",
               "arguments": [
                 {
                   "val": "5"
                 }
-              ]
+              ],
+              "location": "ExampleFeatureContext::passing1()"
             },
+            "name": "I eat 5 cukes",
             "result": {
-              "status": "passed",
-              "duration": 13000000
+              "duration": 13000000,
+              "status": "passed"
             }
           },
           {
             "keyword": "Then",
-            "name": "Am I hungry? \"false\"",
             "line": 7,
             "match": {
-              "location": "ExampleFeatureContext::passing1()",
               "arguments": [
                 {
                   "val": "false"
                 }
-              ]
+              ],
+              "location": "ExampleFeatureContext::passing1()"
             },
+            "name": "Am I hungry? \"false\"",
             "result": {
-              "status": "passed",
-              "duration": 14000000
+              "duration": 14000000,
+              "status": "passed"
             }
           },
           {
             "keyword": "Given",
-            "name": "I have 0 cukes",
             "line": 5,
             "match": {
-              "location": "ExampleFeatureContext::passing1()",
               "arguments": [
                 {
                   "val": "0"
                 }
-              ]
+              ],
+              "location": "ExampleFeatureContext::passing1()"
             },
+            "name": "I have 0 cukes",
             "result": {
-              "status": "passed",
-              "duration": 15000000
+              "duration": 15000000,
+              "status": "passed"
             }
           },
           {
             "keyword": "When",
-            "name": "I eat 0 cukes",
             "line": 6,
             "match": {
-              "location": "ExampleFeatureContext::passing1()",
               "arguments": [
                 {
                   "val": "0"
                 }
-              ]
+              ],
+              "location": "ExampleFeatureContext::passing1()"
             },
+            "name": "I eat 0 cukes",
             "result": {
-              "status": "passed",
-              "duration": 15000000
+              "duration": 15000000,
+              "status": "passed"
             }
           },
           {
             "keyword": "Then",
-            "name": "Am I hungry? \"true\"",
             "line": 7,
             "match": {
-              "location": "ExampleFeatureContext::passing1()",
               "arguments": [
                 {
                   "val": "true"
                 }
-              ]
+              ],
+              "location": "ExampleFeatureContext::passing1()"
             },
+            "name": "Am I hungry? \"true\"",
             "result": {
-              "status": "passed",
-              "duration": 15000000
+              "duration": 15000000,
+              "status": "passed"
             }
           },
           {
             "keyword": "Given",
-            "name": "I have 2 cukes",
             "line": 5,
             "match": {
-              "location": "ExampleFeatureContext::passing1()",
               "arguments": [
                 {
                   "val": "2"
                 }
-              ]
+              ],
+              "location": "ExampleFeatureContext::passing1()"
             },
+            "name": "I have 2 cukes",
             "result": {
-              "status": "passed",
-              "duration": 16000000
+              "duration": 16000000,
+              "status": "passed"
             }
           },
           {
             "keyword": "When",
-            "name": "I eat 3 cukes",
             "line": 6,
             "match": {
-              "location": "ExampleFeatureContext::passing1()",
               "arguments": [
                 {
                   "val": "3"
                 }
-              ]
+              ],
+              "location": "ExampleFeatureContext::passing1()"
             },
+            "name": "I eat 3 cukes",
             "result": {
-              "status": "passed",
-              "duration": 16000000
+              "duration": 16000000,
+              "status": "passed"
             }
           },
           {
             "keyword": "Then",
-            "name": "Am I hungry? \"true\"",
             "line": 7,
             "match": {
-              "location": "ExampleFeatureContext::passing1()",
               "arguments": [
                 {
                   "val": "true"
                 }
-              ]
+              ],
+              "location": "ExampleFeatureContext::passing1()"
             },
+            "name": "Am I hungry? \"true\"",
             "result": {
-              "status": "passed",
-              "duration": 16000000
+              "duration": 16000000,
+              "status": "passed"
             }
           },
           {
             "keyword": "Given",
-            "name": "I have 20600 cukes",
             "line": 5,
             "match": {
-              "location": "ExampleFeatureContext::passing1()",
               "arguments": [
                 {
                   "val": "20600"
                 }
-              ]
+              ],
+              "location": "ExampleFeatureContext::passing1()"
             },
+            "name": "I have 20600 cukes",
             "result": {
-              "status": "passed",
-              "duration": 17000000
+              "duration": 17000000,
+              "status": "passed"
             }
           },
           {
             "keyword": "When",
-            "name": "I eat 20599 cukes",
             "line": 6,
             "match": {
-              "location": "ExampleFeatureContext::passing1()",
               "arguments": [
                 {
                   "val": "20599"
                 }
-              ]
+              ],
+              "location": "ExampleFeatureContext::passing1()"
             },
+            "name": "I eat 20599 cukes",
             "result": {
-              "status": "passed",
-              "duration": 17000000
+              "duration": 17000000,
+              "status": "passed"
             }
           },
           {
             "keyword": "Then",
-            "name": "Am I hungry? \"false\"",
             "line": 7,
             "match": {
-              "location": "ExampleFeatureContext::passing1()",
               "arguments": [
                 {
                   "val": "false"
                 }
-              ]
+              ],
+              "location": "ExampleFeatureContext::passing1()"
             },
+            "name": "Am I hungry? \"false\"",
             "result": {
-              "status": "passed",
-              "duration": 18000000
+              "duration": 18000000,
+              "status": "passed"
             }
           }
-        ]
+        ],
+        "type": "outline"
       }
-    ]
+    ],
+    "id": "eat-cukes-in-lot",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Eat cukes in lot",
+    "uri": "/tmp/behat/0086716af2deaace0a46e9a5c64cdefb/features/feature.feature"
   }
 ]

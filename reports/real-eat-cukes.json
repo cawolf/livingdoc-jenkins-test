@@ -219,62 +219,6 @@
               "duration": 18000000
             }
           }
-        ],
-        "examples": [
-          {
-            "keyword": "Examples",
-            "name": "name?",
-            "line": 10,
-            "description": "description?",
-            "id": "",
-            "rows": [
-              {
-                "cells": [
-                  "X",
-                  "Y",
-                  "hungry"
-                ],
-                "id": "idforexrow?",
-                "line": 10
-              },
-              {
-                "cells": [
-                  "10",
-                  "5",
-                  "false"
-                ],
-                "id": "idforexrow?",
-                "line": 11
-              },
-              {
-                "cells": [
-                  "0",
-                  "0",
-                  "true"
-                ],
-                "id": "idforexrow?",
-                "line": 12
-              },
-              {
-                "cells": [
-                  "2",
-                  "3",
-                  "true"
-                ],
-                "id": "idforexrow?",
-                "line": 13
-              },
-              {
-                "cells": [
-                  "20600",
-                  "20599",
-                  "false"
-                ],
-                "id": "idforexrow?",
-                "line": 14
-              }
-            ]
-          }
         ]
       }
     ]
